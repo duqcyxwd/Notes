@@ -1,4 +1,3 @@
-
 ---
 # Git Set up
 	~/.gitconfig
@@ -249,37 +248,70 @@ Git:
 
 	
 ---
+---
 # Vim
-	:Version
-	:<C-n> <C-p> auto complete
-	:enew new file
-	:set guifont=
+    :Version
+    :<C-n> <C-p> auto complete
+    :enew new file
+    :set guifont=
+
+## Plugin
+
+* :so ~/.vimrc
+* :BundleInstall / :PluginInstall
+
 ## config
-	:Syntax On
-	Line Number: set number, set nonumber
-	ruler:set ruler
+    :Syntax On
+    :set number / set nonumber        Line Number:
+    :set ruler                        ruler
 ## open buffer
-	:ls 		//	for list of open buffers
 
-	:ls  give a list of current open file
-	:bp  	previous buffer
-	:bn  	next buffer
-	:bn  	(n a number) move to nth buffer
-	:b 		with tab-key providing auto-completion (awesome !!)
-	:bd 	(delete buffer)
+    :ls      give a list of current open file
+    :bp      previous buffer
+    :bn      next buffer
+    :bn      (n a number) move to nth buffer
+    :b         with tab-key providing auto-completion (awesome !!)
+    :bd     (delete buffer)
 ## Explore:
-	:e Home/eyonduu/Desktop
-	:E Explore directory of current file
-	:e! //reopen th file
-	:Sex
+    :e Home/eyonduu/Desktop
+    :E Explore directory of current file
+    :e! //reopen th file
+    :Sex
 
-	:[N]Explore[!]  [dir]... Explore directory of current file      *:Explore*
-	:[N]Hexplore[!] [dir]... Horizontal Split & Explore             *:Hexplore*
-	:Rexplore            ... Return to Explorer                     *:Rexplore*
-	:[N]Sexplore[!] [dir]... Split&Explore current file's directory *:Sexplore*
-	:Texplore       [dir]... Tab              & Explore             *:Texplore*
-	:[N]Vexplore[!] [dir]... Vertical   Split & Explore             *:Vexplore*
-	
+    :[N]Explore[!]  [dir]... Explore directory of current file      *:Explore*
+    :[N]Hexplore[!] [dir]... Horizontal Split & Explore             *:Hexplore*
+    :Rexplore            ... Return to Explorer                     *:Rexplore*
+    :[N]Sexplore[!] [dir]... Split&Explore current file's directory *:Sexplore*
+    :Texplore       [dir]... Tab              & Explore             *:Texplore*
+    :[N]Vexplore[!] [dir]... Vertical   Split & Explore             *:Vexplore*
+
+## Folding 
+
+* zc       折叠
+* zC       对所在范围内所有嵌套的折叠点进行折叠
+* zo       展开折叠
+* zO       对所在范围内所有嵌套的折叠点展开
+* zm       关闭所有折叠
+* zM       关闭所有折叠及其嵌套的折叠
+* zr       打开所有折叠
+* zR       打开所有折叠及其嵌套的折叠
+
+* zd       删除当前折叠
+* zE       删除所有折叠
+* [z       到当前打开的折叠的开始处。
+* ]z       到当前打开的折叠的末尾处。
+* zj       向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。
+* zk       向上移动到前一折叠的结束处。关闭的折叠也被计入。
+
+**Markdown-Navagation**
+* ]]: go to next header.
+* [[: go to previous header. Contrast with ]c.
+* ][: go to next sibling header if any.
+* []: go to previous sibling header if any.
+* ]c: go to Current header.
+* ]u: go to parent header (Up).
+
+
 ## Visual Block edit
 	^ → 到行头
 	<C-v> → 开始块操作
@@ -321,6 +353,4 @@ cs f s
 	g# same as g* but in backward direction.
 	gg goes to the first line in the buffer (or provide a count before the command for a specific line).
 	G goes to the last line (or provide a count before the command for a specific line
-
-
 
