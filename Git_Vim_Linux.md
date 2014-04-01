@@ -3,6 +3,7 @@
 # Git Set up
 	~/.gitconfig
 
+
 ### Check SSH Key
 	cat $HOME/.ssh/id_rsa.pub
 	/proj/lterbsSwdi/bbtools/bin/setupSshWithNoPassword.sh
