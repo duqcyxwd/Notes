@@ -1,8 +1,5 @@
----
 # Git Set up
 	~/.gitconfig
-
-
 ### Check SSH Key
 	cat $HOME/.ssh/id_rsa.pub
 	/proj/lterbsSwdi/bbtools/bin/setupSshWithNoPassword.sh
@@ -253,6 +250,14 @@ Git:
     :enew new file
     :set guifont=
 
+## Basic search and replace
+    :%s/foo/bar/g       Find each occurrence of 'foo' (in all lines), and replace it with 'bar'. 
+    :s/foo/bar/g       Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'. 
+    :%s/foo/bar/gc       Change each 'foo' to 'bar', but ask for confirmation first. 
+    :%s/\<foo\>/bar/gc       Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation. 
+    :%s/foo/bar/gci       Change each 'foo' (case insensitive) to 'bar'; ask for confirmation. 
+    :%s/foo/bar/gcI       Change each 'foo' (case sensitive) to 'bar'; ask for confirmation. 
+
 ## Plugin
 
 * :so ~/.vimrc
@@ -271,17 +276,16 @@ Git:
     :b         with tab-key providing auto-completion (awesome !!)
     :bd     (delete buffer)
 ## Explore:
-    :e Home/eyonduu/Desktop
-    :E Explore directory of current file
-    :e! //reopen th file
-    :Sex
-
-    :[N]Explore[!]  [dir]... Explore directory of current file      *:Explore*
-    :[N]Hexplore[!] [dir]... Horizontal Split & Explore             *:Hexplore*
-    :Rexplore            ... Return to Explorer                     *:Rexplore*
-    :[N]Sexplore[!] [dir]... Split&Explore current file's directory *:Sexplore*
-    :Texplore       [dir]... Tab              & Explore             *:Texplore*
-    :[N]Vexplore[!] [dir]... Vertical   Split & Explore             *:Vexplore*
+:e Home/eyonduu/Desktop
+:E Explore directory of current file
+:e! //reopen th file
+:Sex
+:[N]Explore[!]  [dir]... Explore directory of current file      *:Explore*
+:[N]Hexplore[!] [dir]... Horizontal Split & Explore             *:Hexplore*
+:Rexplore            ... Return to Explorer                     *:Rexplore*
+:[N]Sexplore[!] [dir]... Split&Explore current file's directory *:Sexplore*
+:Texplore       [dir]... Tab              & Explore             *:Texplore*
+:[N]Vexplore[!] [dir]... Vertical   Split & Explore             *:Vexplore*
 
 ## Folding 
 
@@ -338,6 +342,8 @@ Example:
 	= → 自动给缩进 （陈皓注：这个功能相当强大，我太喜欢了）
 ## Split
 	:split → 创建分屏 (:vsplit创建垂直分屏)
+	<C-w>s create screen horizontal
+	<C-w>v create screen vertical
 	<C-w><dir> : dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。
 	<C-w>_ (或 <C-w>|) : 最大化尺寸 (<C-w>| 垂直分屏)
 	<C-w>+ (或 <C-w>-) : 增加尺寸
