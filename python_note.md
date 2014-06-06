@@ -111,6 +111,19 @@ Example:
 	conn.close()
 
 
+## 可见性
+    在进行定义类时，如果一个属性的名称是以两个下划线开始，同时又不是以下划线结束的，那么它在编译时将自动地被改写为类名加上属性名
+
+    class Greeting:
+        __data = "Hello World!"
+        def __init__(self, str):
+            Greeting.__data = str
+    >>> g = Greeting("Hello Gary!")
+    >>> dir (g)
+    ['_Greeting__data', '__doc__', '__init__', '__module__']
+
+
+
 ## Cygwin
 alias python='/cygdrive/c/My\ Program/Python/python.exe -i
 

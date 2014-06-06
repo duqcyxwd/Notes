@@ -31,7 +31,7 @@
 3. Check that the above modules are added
 	module list
 
-### Setup your editor
+## Setup your editor
 
 	Procedure: xemacs
 
@@ -125,13 +125,15 @@
 	git diff --cached ?? 
 
 ## git Stash
-	git stash 
-	git stash list
-	git stash apply <stash@{2}>
-	git stash drop
-	git stash apply --index 
-	git config --global alias.stash-unapply '!git stash show -p | git apply -R'
-	git stash-unapply
+* git stash 
+* git stash list
+* git stash apply <stash@{2}>
+* git stash drop
+* git stash apply --index 
+* git config --global alias.stash-unapply '!git stash show -p | git apply -R'
+* git stash-unapply
+* git save <name>
+	
 
 ## Notes
 	find . | wc -l
@@ -162,6 +164,7 @@
 	find ../suites -type f -name '*.erl' >> ~/Run_tests/files.txt
 ## shell vi module
 	- bindkey -v
+	- bindkey -e emacs model 
 	- bindkey "^R" i-search-back
 ## Key binding	Action
 
@@ -227,7 +230,6 @@ Git:
 ## Script
 	chmod 777
 
-
 ## Search
 1. find
 	find dir/ -iname "Full name"
@@ -245,10 +247,16 @@ Git:
 ---
 ---
 # Vim
+
+## Basic
+
     :Version
     :<C-n> <C-p> auto complete
     :enew new file
     :set guifont=
+
+## Basic moving
+    %	to matched brace
 
 ## Basic search and replace
     :%s/foo/bar/g       Find each occurrence of 'foo' (in all lines), and replace it with 'bar'. 
@@ -257,6 +265,11 @@ Git:
     :%s/\<foo\>/bar/gc       Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation. 
     :%s/foo/bar/gci       Change each 'foo' (case insensitive) to 'bar'; ask for confirmation. 
     :%s/foo/bar/gcI       Change each 'foo' (case sensitive) to 'bar'; ask for confirmation. 
+
+### Scope search 
+    <c-\>g      Find defination 
+    <c-\>s      Find from all scope
+    <c-]>s      Find from all scope and open it in seprate window
 
 ## Plugin
 
@@ -276,6 +289,8 @@ Git:
     :b         with tab-key providing auto-completion (awesome !!)
     :bd     (delete buffer)
 ## Explore:
+
+:Exp explore current dir
 :e Home/eyonduu/Desktop
 :E Explore directory of current file
 :e! //reopen th file
@@ -297,6 +312,8 @@ Git:
 * zM       关闭所有折叠及其嵌套的折叠
 * zr       打开所有折叠
 * zR       打开所有折叠及其嵌套的折叠
+* za zf 
+* nnoremap <space> za 
 
 * zd       删除当前折叠
 * zE       删除所有折叠
@@ -304,6 +321,11 @@ Git:
 * ]z       到当前打开的折叠的末尾处。
 * zj       向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。
 * zk       向上移动到前一折叠的结束处。关闭的折叠也被计入。
+
+* if unable to fold, check fold method
+
+** Folder for C **
+:set foldmethod=syntax
 
 **Markdown-Navagation**
 * ]]: go to next header.
@@ -348,13 +370,29 @@ Example:
 	<C-w>_ (或 <C-w>|) : 最大化尺寸 (<C-w>| 垂直分屏)
 	<C-w>+ (或 <C-w>-) : 增加尺寸
 
+
+## Register
+
+* <C-r><C-p>*/+ Paste from Register
+* "+p "*p Paste from Register in command model
+* <C-r><C-o>" Paste from yanked
+* <C-r><C-o> Register  Paster from Register 
+* "*yy or "+yy to copy a line to your
+
+--0- Paste from Registeru
+
 ## Others
 cs f s 
 
-	gd will take you to the local declaration.
-	gD will take you to the global declaration.
-	g* search for the word under the cursor (like *, but g* on 'rain' will find words like 'rainbow').
-	g# same as g* but in backward direction.
-	gg goes to the first line in the buffer (or provide a count before the command for a specific line).
-	G goes to the last line (or provide a count before the command for a specific line
+gd will take you to the local declaration.
+gD will take you to the global declaration.
+g* search for the word under the cursor (like *, but g* on 'rain' will find words like 'rainbow').
+g# same as g* but in backward direction.
+gg goes to the first line in the buffer (or provide a count before the command for a specific line).
+G  goes to the last line (or provide a count before the command for a specific line
+gf will go to the file under the cursor 
+
+
+# Sublime
+sublime.log_commands(True)
 
