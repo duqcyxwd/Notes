@@ -266,10 +266,47 @@ Git:
     :%s/foo/bar/gci       Change each 'foo' (case insensitive) to 'bar'; ask for confirmation. 
     :%s/foo/bar/gcI       Change each 'foo' (case sensitive) to 'bar'; ask for confirmation. 
 
+## Indent or unindent
+    [http://stackoverflow.com/questions/235839/how-do-i-indent-multiple-lines-quickly-in-vi]
+    ={
+
+    >>   Indent line by shiftwidth spaces
+    <<   De-indent line by shiftwidth spaces
+    5>>  Indent 5 lines
+    5==  Re-indent 5 lines
+
+    >%   Increase indent of a braced or bracketed block (place cursor on brace first)
+    =%   Reindent a braced or bracketed block (cursor on brace)
+    <%   Decrease indent of a braced or bracketed block (cursor on brace)
+    ]p   Paste text, aligning indentation with surroundings
+
+    =i{  Re-indent the 'inner block', i.e. the contents of the block
+    =a{  Re-indent 'a block', i.e. block and containing braces
+    =2a{ Re-indent '2 blocks', i.e. this block and containing block
+
+    >i{  Increase inner block indent
+    <i{  Decrease inner block indent
+
+    J → 把所有的行连接起来（变成一行）
+	< 或 > → 左右缩进
+	= → 自动给缩进 （陈皓注：这个功能相当强大，我太喜欢了）
+
+### Go   
+    gd will take you to the local declaration.
+         <C-o> or '' jump back    
+    gD will take you to the global declaration.
+    g* search for the word under the cursor (like *, but g* on 'rain' will find words like 'rainbow').
+    g# same as g* but in backward direction.
+    gg goes to the first line in the buffer (or provide a count before the command for a specific line).
+    G  goes to the last line (or provide a count before the command for a specific line
+    gf will go to the file under the cursor 
+ 
 ### Scope search 
+    cs f s 
     <c-\>g      Find defination 
     <c-\>s      Find from all scope
     <c-]>s      Find from all scope and open it in seprate window
+
 
 ## Plugin
 
@@ -288,19 +325,21 @@ Git:
     :bn      (n a number) move to nth buffer
     :b         with tab-key providing auto-completion (awesome !!)
     :bd     (delete buffer)
+    :Bclose  close with out close window
+
 ## Explore:
 
-:Exp explore current dir
-:e Home/eyonduu/Desktop
-:E Explore directory of current file
-:e! //reopen th file
-:Sex
-:[N]Explore[!]  [dir]... Explore directory of current file      *:Explore*
-:[N]Hexplore[!] [dir]... Horizontal Split & Explore             *:Hexplore*
-:Rexplore            ... Return to Explorer                     *:Rexplore*
-:[N]Sexplore[!] [dir]... Split&Explore current file's directory *:Sexplore*
-:Texplore       [dir]... Tab              & Explore             *:Texplore*
-:[N]Vexplore[!] [dir]... Vertical   Split & Explore             *:Vexplore*
+    :Exp explore current dir
+    :e Home/eyonduu/Desktop
+    :E Explore directory of current file
+    :e! //reopen th file
+    :Sex
+    :[N]Explore[!]  [dir]... Explore directory of current file      *:Explore*
+    :[N]Hexplore[!] [dir]... Horizontal Split & Explore             *:Hexplore*
+    :Rexplore            ... Return to Explorer                     *:Rexplore*
+    :[N]Sexplore[!] [dir]... Split&Explore current file's directory *:Sexplore*
+    :Texplore       [dir]... Tab              & Explore             *:Texplore*
+    :[N]Vexplore[!] [dir]... Vertical   Split & Explore             *:Vexplore*
 
 ## Folding 
 
@@ -358,10 +397,6 @@ Example:
 	@a → 在1下面写下 2
 	@@ → 在2 正面写下3
 	现在做 100@@ 会创建新的100行，并把数据增加到 103.
-## index
-	J → 把所有的行连接起来（变成一行）
-	< 或 > → 左右缩进
-	= → 自动给缩进 （陈皓注：这个功能相当强大，我太喜欢了）
 ## Split
 	:split → 创建分屏 (:vsplit创建垂直分屏)
 	<C-w>s create screen horizontal
@@ -379,20 +414,26 @@ Example:
 * <C-r><C-o> Register  Paster from Register 
 * "*yy or "+yy to copy a line to your
 
---0- Paste from Registeru
+* "xp 你也可以使用p命令，将x寄存中的文本粘贴到光标之后：
+
+未命名寄存器 	   “ 	    上一次复制或删除的文本
+数字寄存器 	       0-9 	    文本删除历史
+短删除寄存器 	   - 	    删除少于一行的文本
+命名寄存器 	       a-z,A-Z 	存放文本
+只读寄存器 	       % 	    当前文件的名字
+                   # 	    交替文件的名字
+                   . 	    上一次插入的文本
+                   : 	    上一次执行的命令
+表达式寄存器 	   ＝ 	    返回表达式结果
+选择和拖拽寄存器   * 	    系统剪切板
+                   + 	    系统剪切板（X11）
+                   ~ 	    拖拽的文本
+黑洞寄存器 	       _ 	    永久删除的文本
+搜索模式寄存器 	   / 	    搜索模式
 
 ## Others
-cs f s 
 
-gd will take you to the local declaration.
-gD will take you to the global declaration.
-g* search for the word under the cursor (like *, but g* on 'rain' will find words like 'rainbow').
-g# same as g* but in backward direction.
-gg goes to the first line in the buffer (or provide a count before the command for a specific line).
-G  goes to the last line (or provide a count before the command for a specific line
-gf will go to the file under the cursor 
-
-
+    :w !diff % -    Show different before save
 # Sublime
 sublime.log_commands(True)
 
