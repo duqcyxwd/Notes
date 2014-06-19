@@ -127,7 +127,7 @@
 ## git Stash
 * git stash 
 * git stash list
-* git stash apply <stash@{2}>
+* git stash apply 'stash@{2}'
 * git stash drop
 * git stash apply --index 
 * git config --global alias.stash-unapply '!git stash show -p | git apply -R'
@@ -408,8 +408,9 @@ Example:
 
 ## Register
 
-* <C-r><C-p>*/+ Paste from Register
-* "+p "*p Paste from Register in command model
+* <C-r> */+ Paste from Register in insert model
+* "+p "*p Paste from Register in normal model
+* <C-r> register  paster from register in command model 
 * <C-r><C-o>" Paste from yanked
 * <C-r><C-o> Register  Paster from Register 
 * "*yy or "+yy to copy a line to your
@@ -434,6 +435,14 @@ Example:
 ## Others
 
     :w !diff % -    Show different before save
+
+### Session
+
+    :mksession ~/mysession.vim
+    :source ~/mysession.vim or open vim with the -S option:
+    $ vim -S ~/mysession.vim
+
+    
 # Sublime
 sublime.log_commands(True)
 
