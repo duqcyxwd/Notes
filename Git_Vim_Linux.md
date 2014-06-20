@@ -408,15 +408,18 @@ Example:
 
 ## Register
 
-* <C-r> */+ Paste from Register in insert model
-* "+p "*p Paste from Register in normal model
-* <C-r> register  paster from register in command model 
-* <C-r><C-o>" Paste from yanked
-* <C-r><C-o> Register  Paster from Register 
-* "*yy or "+yy to copy a line to your
+- <C-r> */+	    Paste from Register in insert model
+- "+p "*p	    Paste from Register in normal model
+- <C-r> register    paster from register in command model 
+- "*yy or "+yy	    copy a line to your clipboard
+- "kyy		    copy line to register k
+- "*		    the contents of the system clipboard
+- "/ -		    last search command
+- ": -		    last command.
+- "xp		    你也可以使用p命令，将x寄存中的文本粘贴到光标之后：
 
-* "xp 你也可以使用p命令，将x寄存中的文本粘贴到光标之后：
-
+### Register function
+let @*=@a	    copy from register to register
 未命名寄存器 	   “ 	    上一次复制或删除的文本
 数字寄存器 	       0-9 	    文本删除历史
 短删除寄存器 	   - 	    删除少于一行的文本
@@ -431,6 +434,7 @@ Example:
                    ~ 	    拖拽的文本
 黑洞寄存器 	       _ 	    永久删除的文本
 搜索模式寄存器 	   / 	    搜索模式
+
 
 ## Others
 
