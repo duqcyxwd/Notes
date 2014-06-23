@@ -436,6 +436,12 @@ let @*=@a	    copy from register to register
 搜索模式寄存器 	   / 	    搜索模式
 
 
+### yy & add
+yy -> Register "
+   -> register 0
+dd ->Register "
+   ->Register 1
+   Register 1-> register 2
 ## Others
 
     :w !diff % -    Show different before save
