@@ -1,5 +1,29 @@
 # Git Set up
 	~/.gitconfig
+	
+	[user]
+		name = Yongqinchuan Du
+		email = Yongqinchuan.du@ericsson.com
+	[github]
+		user = duqcyxwd
+		password = duqc520
+	[diff]
+		tool = winmerge
+	[difftool "winmerge"]
+		cmd = C:/Program\\ Files/WinMerge/WinMergeU.exe \"$LOCAL\" \"$REMOTE\"
+	[difftool]
+		prompt = false
+	[color]
+		ui = true
+		diff = always
+		status = always
+		branch = always
+		interactive = always
+		ui = always
+		pager = true
+	[core]
+		autocrlf = true
+
 ### Check SSH Key
 	cat $HOME/.ssh/id_rsa.pub
 	/proj/lterbsSwdi/bbtools/bin/setupSshWithNoPassword.sh
