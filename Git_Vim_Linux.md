@@ -1,5 +1,29 @@
 # Git Set up
 	~/.gitconfig
+	
+	[user]
+		name = Yongqinchuan Du
+		email = Yongqinchuan.du@ericsson.com
+	[github]
+		user = duqcyxwd
+		password = 
+	[diff]
+		tool = winmerge
+	[difftool "winmerge"]
+		cmd = C:/Program\\ Files/WinMerge/WinMergeU.exe \"$LOCAL\" \"$REMOTE\"
+	[difftool]
+		prompt = false
+	[color]
+		ui = true
+		diff = always
+		status = always
+		branch = always
+		interactive = always
+		ui = always
+		pager = true
+	[core]
+		autocrlf = true
+
 ### Check SSH Key
 	cat $HOME/.ssh/id_rsa.pub
 	/proj/lterbsSwdi/bbtools/bin/setupSshWithNoPassword.sh
@@ -406,7 +430,7 @@ Example:
 	<C-w>+ (或 <C-w>-) : 增加尺寸
 
 
-## Register
+## Registers
 
 - <C-r> */+	    Paste from Register in insert model
 - "+p "*p	    Paste from Register in normal model
@@ -418,8 +442,9 @@ Example:
 - ": -		    last command.
 - "xp		    你也可以使用p命令，将x寄存中的文本粘贴到光标之后：
 
+- let @*=@a	    copy from register to register
+
 ### Register function
-let @*=@a	    copy from register to register
 未命名寄存器 	   “ 	    上一次复制或删除的文本
 数字寄存器 	       0-9 	    文本删除历史
 短删除寄存器 	   - 	    删除少于一行的文本
@@ -444,7 +469,8 @@ dd ->Register "
    Register 1-> register 2
 ## Others
 
-    :w !diff % -    Show different before save
+   :set variable   - shows vars different from defaults
+   :w !diff % -    Show different before save
 
 ### Session
 
