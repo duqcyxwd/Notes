@@ -130,3 +130,7 @@ alias python='/cygdrive/c/My\ Program/Python/python.exe -i
 
 ## Question
 	Qt, emit
+
+# sublime debug
+sublime.status_message("sadf")
+sys.stderr.write("started\n")
