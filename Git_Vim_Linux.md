@@ -141,6 +141,14 @@
 2. Delete recent `git reset --hard HEAD~1`  `git reset --hard HEAD~`
 3. keep changes but cancel commit `git reset HEAD~1`
 
+## Git update Branch from master
+1. 'git checkout master && git pull'
+2. 'git checkout branch-name && git rebase master'
+3. If there is a conflict do Fix conflict else jump to 6
+4. 'git add .' or git add file-name
+5. git rebase --continue 
+6. git push --force ??? not sure about this part
+
 ## Other
 	gitk --unnittest/unnittest.php //Check the change of single file. 
 	git branch --remotes/-r
