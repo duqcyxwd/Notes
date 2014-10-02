@@ -120,8 +120,14 @@
 
 	git log | grep CXP | head
 	git config --list
-## Branch delete
-	git branch -D <branch>
+## Branch Management
+1. Delete Local branch `git branch -D <branch>`
+2. Delete remote Branch `git push origin --delete <branch>`
+3. Delete a local remote-tracking branch 
+    `git branch -dr <remote>/<branch>`
+4. Delete non-exist remote branch tag `git fetch <remote> -p`
+    
+
 
 ## Git gui gitk
 	- gitk --all
