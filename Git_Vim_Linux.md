@@ -201,6 +201,8 @@
 	` is not '
 
 	find ../suites -type f -name '*.erl' >> ~/Run_tests/files.txt
+
+	mdfind 'find file'
 ## shell vi module
 	- bindkey -v
 	- bindkey -e emacs model 
@@ -496,4 +498,9 @@ dd ->Register "
     
 # Sublime
 sublime.log_commands(True)
+
+# MYSQL
+
+    show databases
+    use [databseName]
 
