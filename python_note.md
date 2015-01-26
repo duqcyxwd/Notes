@@ -3,11 +3,12 @@
 1. 如下注释用于指定解释器
     #! /usr/bin/python 
 
-
 ### variable
 	可以把全局变量放到一个专门的文件中，然后通过import来引用：
     _a = 1 
-    _b = 2 
+    _b = 2
+
+    Python 会 instance Class only once when it load the Class or Method
 
 #### 【常量】
 
@@ -124,13 +125,13 @@ Example:
 
 
 
-## Cygwin
-alias python='/cygdrive/c/My\ Program/Python/python.exe -i
+## Cygwin alias 
+	alias python='/cygdrive/c/My\ Program/Python/python.exe -i
+
+## Directory
+	parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	os.sys.path.insert(0,parentdir)
+
+	loadUi('View\MainWindow.ui', self)
 
 
-## Question
-	Qt, emit
-
-# sublime debug
-sublime.status_message("sadf")
-sys.stderr.write("started\n")
