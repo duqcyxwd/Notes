@@ -126,6 +126,20 @@
 3. Delete a local remote-tracking branch 
     `git branch -dr <remote>/<branch>`
 4. Delete non-exist remote branch tag `git fetch <remote> -p`
+
+
+## Remote manage
+Configure a remote for a fork
+git remote -v
+git remote add upstream 
+
+
+Update from upstream
+
+    git fetch upstream
+    git checkout master
+    git merge upstream/master
+
     
 
 
@@ -274,6 +288,7 @@ Git:
 ## Search
 1. find
 	find dir/ -iname "Full name"
+	find . -name '*s' -print
 	find . -name 'my*' -ls
 	find . -iname *git*
 
@@ -288,7 +303,6 @@ Git:
 ---
 ---
 # Vim
-
 ## Basic
 
     :Version
