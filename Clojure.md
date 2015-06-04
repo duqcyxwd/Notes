@@ -1,18 +1,20 @@
-# Clojure Notes
+Clojure Notes
 	1 for first one 
 	2 for second one fir references
 
+## Variable 
 	Immutability
+
+	list:       '(a b :name 12.5)
+	vector:     ['a 'b :name 12.5]
+	map 		{:name "chas" :age 31}
+	set: 		#{1 2 3}
+
 List
-
 	(= '(1 2 3 4 5) (list 1 2 3 4 5))
-
 vec 
-
 	(= __ (vec '(1)))
-
 set
-
 	(class #{1 2 3}) ; => clojure.lang.PersistentHashSet
 	(set [1 2 3 1 2 3 3 2 1 3 2 1]) ; => #{1 2 3}
 
@@ -25,6 +27,7 @@ Add
 Keys
 	(keys/vals {})
 
+## Function 
 Function 
 
 	(defn multiply-by-ten [n]  (* 10 n))
@@ -44,6 +47,7 @@ Conditionals
 
 "You may have a multitude of possible paths"
 
+## Let
 	(let [x 5]
     (= :your-road (cond (= x 6) :road-not-taken
                         (= x 7) :another-road-not-taken
@@ -73,6 +77,7 @@ http://clojurescriptkoans.com/#runtime-polymorphism/4
 	(= "I don't know what Rich Hickey eats."
 	 (diet {:name "Rich Hickey"})))
 
+## Others
 
 ### Lazy Seq
 
@@ -107,3 +112,44 @@ http://clojurescriptkoans.com/#runtime-polymorphism/4
   at they seek by knowing what they do not seek"
   (= [true false true] (let [not-a-symbol? (complement symbol?)]
                   (map not-a-symbol? [:a 'b "c"])))
+
+
+### Arguments and rest of arguments
+    (defn doubler 
+	    [f]
+	    (fn [& args]
+            (* 2 (apply f args))))
+            (def double-+ (doubler +))
+    (double-+ 1 2 3)
+
+## Notes
+REPL
+ * Remember switch to the REPL that you are working on.
+ * REPL port is storing in dot file.
+ * Function only need to load once.
+ * in vim lead wiht arrow will move bracket. Lead with w and bracket will add bracket
+ * check the source code if you don't understand the function, most of them are macro.
+ * Vim: Pradict will auto complete the bracket and keep it balance 
+    let paredit_mode = 0    
+ * (in-ns 'cenx.eureka.pratice)     
+
+Hard Question
+ * P73 Primitive logging system 
+
+TODO
+   Configure map multiple select
+
+	C-f	Move forward a character
+	C-b	Move backward a character
+
+	M-f	Move forward a word
+	M-b	Move backward a word
+
+	C-n	Move to next line
+	C-p	Move to previous line
+
+	C-a	Move to beginning of line
+	C-e	Move to end of line
+
+	M-a	Move back to beginning of sentence
+	M-e	Move forward to end of sentence
