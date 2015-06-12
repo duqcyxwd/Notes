@@ -139,17 +139,29 @@ Hard Question
 TODO
    Configure map multiple select
 
-	C-f	Move forward a character
-	C-b	Move backward a character
+# Emacs Shortcut    
 
-	M-f	Move forward a word
-	M-b	Move backward a word
+* M-a	Move back to beginning of sentence
+* M-e	Move forward to end of sentence
+ 
+* C-c M-n change current name space in terminal
+* C-c C-k Compile current file
+* C-c C-k Compile current file
+* C-c o Switch to the window
+* C-x d Open a Directory
 
-	C-n	Move to next line
-	C-p	Move to previous line
 
-	C-a	Move to beginning of line
-	C-e	Move to end of line
+# Database: Postgres
+    
+ * psql postgres
+	    \t
+	    \q
+ * postgres server: postgres -D /usr/local/var/postgres
+ * psql postgre sql default database
+ * Under Datomic
+     bin/transactor -Xmx6g config/Sprint-config.properties
+ * database name on datomic : ripper
 
-	M-a	Move back to beginning of sentence
-	M-e	Move forward to end of sentence
+ * restore datomic data: bin/datomic -Xmx4g -Xms4g restore-db file:/Users/chuan.du/datomic-dumps/sprint_datomic_20150602  datomic:dev://localhost:4334/ripper
+
+
