@@ -13,7 +13,8 @@ Clojure Notes
 List
 	(= '(1 2 3 4 5) (list 1 2 3 4 5))
 vec 
-	(= __ (vec '(1)))
+	(= [1] (vec '(1)))
+
 set
 	(class #{1 2 3}) ; => clojure.lang.PersistentHashSet
 	(set [1 2 3 1 2 3 3 2 1 3 2 1]) ; => #{1 2 3}
