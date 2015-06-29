@@ -456,6 +456,7 @@ Example:
 	:split → 创建分屏 (:vsplit创建垂直分屏)
 	<C-w>s create screen horizontal
 	<C-w>v create screen vertical
+	<C-w>w Switch WIndow
 	<C-w><dir> : dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。
 	<C-w>_ (或 <C-w>|) : 最大化尺寸 (<C-w>| 垂直分屏)
 	<C-w>+ (或 <C-w>-) : 增加尺寸
