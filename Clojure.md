@@ -1,7 +1,4 @@
-Clojure Notes
-	1 for first one 
-	2 for second one fir references
-
+# Clojure
 ## Variable 
 	Immutability
 
@@ -123,7 +120,10 @@ http://clojurescriptkoans.com/#runtime-polymorphism/4
             (def double-+ (doubler +))
     (double-+ 1 2 3)
 
-## Notes
+## Other 
+    #_ comment a function
+
+# Notes
 REPL
  * Remember switch to the REPL that you are working on.
  * REPL port is storing in dot file.
@@ -140,29 +140,46 @@ Hard Question
 TODO
    Configure map multiple select
 
+
+## Speical Character
+
+[articla](https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/)==
+
+* name space #
+* append # to the end of the variable name and let Clojure generate a unique symbol for it.
+* #_ - Discard macro
+* #" - Regular Expression macro
+* #' - Var macro
+
+
+
+# Clojure Code style
+
 # Emacs Shortcut    
 
 * M-a	Move back to beginning of sentence
 * M-e	Move forward to end of sentence
- 
+
 * C-c M-n change current name space in terminal
 * C-c C-k Compile current file
 * C-c C-k Compile current file
 * C-c o Switch to the window
 * C-x d Open a Directory
+* @ - Deref macro
+* C-M-f/C-M-b Jump forward / back bracket
+* C-c M-o Clearn the repl
+* C-x 52 Open current window on new one
+* ap-project ? search the tag?
 
+ 
+* Threading macros -> ->> some-> cond-> as->
 
-# Database: Postgres
-    
- * psql postgres
-	    \t
-	    \q
- * postgres server: postgres -D /usr/local/var/postgres
- * psql postgre sql default database
- * Under Datomic
-     bin/transactor -Xmx6g config/Sprint-config.properties
- * database name on datomic : ripper
+## Cider
+* C-c C-d r Loopup symbol in Grimoire
+* C-c C-d a Loopup for function/vars
 
- * restore datomic data: bin/datomic -Xmx4g -Xms4g restore-db file:/Users/chuan.du/datomic-dumps/sprint_datomic_20150602  datomic:dev://localhost:4334/ripper
+## Vim 
+* C-o jump back
 
-
+# SQL
+SELECT * from * WHERE name LIKE '%word%' OR name LIKE '%word%' GROUP BY name;
