@@ -1,3 +1,8 @@
+# Clojure Project
+- Lein
+    * lein new app <project-name>
+    * lein run
+
 # Clojure
 ## Variable 
 	Immutability
@@ -120,8 +125,51 @@ http://clojurescriptkoans.com/#runtime-polymorphism/4
             (def double-+ (doubler +))
     (double-+ 1 2 3)
 
-## Other 
-    #_ comment a function
+### Threading 
+    (cond-> "abcde"
+      (> 5 3) (str "xyz")
+      (> 5 3) (str "xyz")
+      (> 5 10)(str "lop"))
+    (some-> " " )
+
+    (as-> )
+
+    (as-> "abcde" v
+      (str "xyz" v)
+      (str "xyz" v)
+      (str "lop" v))
+
+    macroexpand: expands the macros
+    Threading macros -> ->> some-> cond-> as->
+
+    ;; let's compare thread first (->) and thread last ( ->> )
+    user=> (macroexpand '(-> 0 (+ 1) (+ 2) (+ 3)))
+    (+ (+ (+ 0 1) 2) 3)
+    user=> (macroexpand '(->> 0 (+ 1) (+ 2) (+ 3)))
+    (+ 3 (+ 2 (+ 1 0)))
+
+
+### Small trick 
+
+   "#_ comment a function"
+
+
+## Speical Character
+
+[articla](https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/)==
+
+* name space #
+* append # to the end of the variable name and let Clojure generate a unique symbol for it.
+* #_ - Discard macro
+* #" - Regular Expression macro
+* #' - Var macro
+
+
+
+# Working with Clojure
+
+* Filter map based my key
+    (./pprint (map #(select-keys % [:name :type :home-aggregation-sites]) sites))
 
 # Notes
 REPL
@@ -137,25 +185,10 @@ REPL
 Hard Question
  * P73 Primitive logging system 
 
-TODO
-   Configure map multiple select
-
-
-## Speical Character
-
-[articla](https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/)==
-
-* name space #
-* append # to the end of the variable name and let Clojure generate a unique symbol for it.
-* #_ - Discard macro
-* #" - Regular Expression macro
-* #' - Var macro
-
-
-
 # Clojure Code style
+    * No get
 
-# Emacs Shortcut    
+# Emacs    
 
 * M-a	Move back to beginning of sentence
 * M-e	Move forward to end of sentence
@@ -172,7 +205,9 @@ TODO
 * ap-project ? search the tag?
 
  
-* Threading macros -> ->> some-> cond-> as->
+
+## Other
+* Pretty Simple for display 
 
 ## Cider
 * C-c C-d r Loopup symbol in Grimoire
