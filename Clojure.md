@@ -2,6 +2,25 @@
 - Lein
     * lein new app <project-name>
     * lein run
+    * lein isntall, install that repo in .m2
+
+- Concurrency   
+    * dosync
+    * (def gold (atom 1))
+    * (alter key fun)
+    * (defn bond (agent 0))
+    * send/senf-off
+    * add-watcher/set-validatro!/
+    
+    Other tools
+    * Feature
+       1. (def ama (future (Thread/sleep iE4) 4))
+        (future-done? ama) 
+        @ama
+        (future-cancelled? ama
+        (deref ama 1234 :time-out)
+    * promise
+    * (def pinky-swear (promise))
 
 # Clojure
 ## Variable 
@@ -204,6 +223,25 @@ Hard Question
 * C-x 52 Open current window on new one
 * ap-project ? search the tag?
 
+* C-c C-i/tab  search fucntion
+* C-S-. select next same
+
+* ag-prog search
+* C-c C-f start follow mode
+* C-l cycle the cursor positikko 
+
+
+* Trace...
+  * C-c M-t n to trace
+  * C-c C-p to display
+
+* Debug
+    - C-u C-M-x 
+    - C-u M-x
+
+* Window
+    - <C-s-down> Move windows down command-alt-shift-down
+ 
  
 
 ## Other
