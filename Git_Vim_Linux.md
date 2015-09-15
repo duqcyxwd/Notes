@@ -435,6 +435,31 @@ Git:
 	<C-v> → 开始块操作
 	<C-d> → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)
 	I-- [ESC] → I是插入，插入“--”，按ESC键来为每一行生效。
+
+## Visual/Control Block
+
+* a "             evil-a-double-quote
+* a '             evil-a-single-quote
+* a ( .. a )      evil-a-paren
+* a <             evil-an-angle
+* a >             evil-an-angle
+* a B             evil-a-curly
+* a W             evil-a-WORD
+* a [             evil-a-bracket
+* a ]             evil-a-bracket
+* a `             evil-a-back-quote
+* a b             evil-a-paren
+* a o             evil-a-symbol
+* a p             evil-a-paragraph
+* a s             evil-a-sentence
+* a t             evil-a-tag
+* a w             evil-a-word
+* a {             evil-a-curly
+* a }             evil-a-curly
+
+
+
+
 ## 宏 Ma
 	宏录制： qa 操作序列 q, @a, @@
 	qa 把你的操作记录在寄存器 a。
