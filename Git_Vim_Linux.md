@@ -1,12 +1,12 @@
 # Git Set up
 	~/.gitconfig
-	
+
 	[user]
 		name = Yongqinchuan Du
 		email = Yongqinchuan.du@ericsson.com
 	[github]
 		user = duqcyxwd
-		password = 
+		password =
 
 	[diff]
 		tool = winmerge
@@ -96,7 +96,6 @@
 	Next: Continue.
 
 
-
 # Git Commands
 ## Git Gerrit
 ### Git Aliases source
@@ -123,7 +122,7 @@
 ## Branch Management
 1. Delete Local branch `git branch -D <branch>`
 2. Delete remote Branch `git push origin --delete <branch>`
-3. Delete a local remote-tracking branch 
+3. Delete a local remote-tracking branch
     `git branch -dr <remote>/<branch>`
 4. Delete non-exist remote branch tag `git fetch <remote> -p`
 
@@ -131,7 +130,7 @@
 ## Remote manage
 Configure a remote for a fork
 git remote -v
-git remote add upstream 
+git remote add upstream
 
 
 Update from upstream
@@ -140,8 +139,6 @@ Update from upstream
     git checkout master
     git merge upstream/master
 
-    
-
 
 ## Git gui gitk
 	- gitk --all
@@ -149,7 +146,7 @@ Update from upstream
 ## merge multiple commit
 	b2
 	|
-	b1 
+	b1
 	|
 	b0 49687a0a646954afdf3f4dae1f914ea793341ea2
 
@@ -161,37 +158,45 @@ Update from upstream
 2. Delete recent `git reset --hard HEAD~1`  `git reset --hard HEAD~`
 3. keep changes but cancel commit `git reset HEAD~1`
 
+Method 2
+`git revert HEAD`
+
 ## Git update Branch from master
-1. 'git checkout master && git pull'
-2. 'git checkout branch-name && git rebase master'
-3. If there is a conflict do Fix conflict else jump to 6
-4. 'git add .' or git add file-name
-5. git rebase --continue 
-6. git push --force ??? not sure about this part
+	1. git checkout master && git pull
+	2. git checkout branch-name && git rebase master
+	3. If there is a conflict do Fix conflict else jump to 6
+	4. 'git add .' or git add file-name
+	5. git rebase --continue
+	6. git push --force ??? not sure about this part
 
 ## Other
-	gitk --unnittest/unnittest.php //Check the change of single file. 
+	gitk --unnittest/unnittest.php //Check the change of single file.
 	git branch --remotes/-r
 	git branch -r | fgrep task | wc -l
 	git branch -a
 	gas alias|grep git
-	git diff --cached ?? 
+	git diff --cached ??
 
 ## git Stash
-* git stash 
-* git stash list
-* git stash apply 'stash@{2}'
-* git stash drop
-* git stash apply --index 
-* git config --global alias.stash-unapply '!git stash show -p | git apply -R'
-* git stash-unapply
-* git save <name>
-	
+	* git stash
+	* git stash list
+	* git stash apply 'stash@{2}'
+	* git stash drop
+	* git stash apply --index
+	* git config --global alias.stash-unapply '!git stash show -p | git apply -R'
+	* git stash-unapply
+	* git save <name>
 
-## Notes
+
+
+## Git checkout outs, theirs in conflict
+- checkout out file in confict
+gco --theirs file.index
+
+
+# Notes
 	find . | wc -l
 	find ../suites -type f -name '*.erl' >> ~/Run_tests/files.txt
-
 
 ---
 # shell Command
@@ -219,7 +224,7 @@ Update from upstream
 	mdfind 'find file'
 ## shell vi module
 	- bindkey -v
-	- bindkey -e emacs model 
+	- bindkey -e emacs model
 	- bindkey "^R" i-search-back
 ## Key binding	Action
 
@@ -299,10 +304,14 @@ Git:
 
 	whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。
 	whereis命令的使用实例：
-	　　$ whereis grep	
+	　　$ whereis grep
 ---
 ---
 # Vim
+## Usefull Link
+
+[gif for vim](https://vimgifs.com/ex_jumps/)
+
 ## Basic
 
     :Version
@@ -314,12 +323,12 @@ Git:
     %	to matched brace
 
 ## Basic search and replace
-    :%s/foo/bar/g       Find each occurrence of 'foo' (in all lines), and replace it with 'bar'. 
-    :s/foo/bar/g       Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'. 
-    :%s/foo/bar/gc       Change each 'foo' to 'bar', but ask for confirmation first. 
-    :%s/\<foo\>/bar/gc       Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation. 
-    :%s/foo/bar/gci       Change each 'foo' (case insensitive) to 'bar'; ask for confirmation. 
-    :%s/foo/bar/gcI       Change each 'foo' (case sensitive) to 'bar'; ask for confirmation. 
+    :%s/foo/bar/g       Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+    :s/foo/bar/g       Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
+    :%s/foo/bar/gc       Change each 'foo' to 'bar', but ask for confirmation first.
+    :%s/\<foo\>/bar/gc       Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
+    :%s/foo/bar/gci       Change each 'foo' (case insensitive) to 'bar'; ask for confirmation.
+    :%s/foo/bar/gcI       Change each 'foo' (case sensitive) to 'bar'; ask for confirmation.
 
 ## Indent or unindent
     [http://stackoverflow.com/questions/235839/how-do-i-indent-multiple-lines-quickly-in-vi]
@@ -354,11 +363,11 @@ Git:
     g# same as g* but in backward direction.
     gg goes to the first line in the buffer (or provide a count before the command for a specific line).
     G  goes to the last line (or provide a count before the command for a specific line
-    gf will go to the file under the cursor 
- 
-### Scope search 
-    cs f s 
-    <c-\>g      Find defination 
+    gf will go to the file under the cursor
+
+### Scope search
+    cs f s
+    <c-\>g      Find defination
     <c-\>s      Find from all scope
     <c-]>s      Find from all scope and open it in seprate window
 
@@ -396,7 +405,7 @@ Git:
     :Texplore       [dir]... Tab              & Explore             *:Texplore*
     :[N]Vexplore[!] [dir]... Vertical   Split & Explore             *:Vexplore*
 
-## Folding 
+## Folding
 
 * zc       折叠
 * zC       对所在范围内所有嵌套的折叠点进行折叠
@@ -406,8 +415,8 @@ Git:
 * zM       关闭所有折叠及其嵌套的折叠
 * zr       打开所有折叠
 * zR       打开所有折叠及其嵌套的折叠
-* za zf 
-* nnoremap <space> za 
+* za zf
+* nnoremap <space> za
 
 * zd       删除当前折叠
 * zE       删除所有折叠
@@ -447,7 +456,7 @@ Git:
 * a W             evil-a-WORD
 * a [             evil-a-bracket
 * a ]             evil-a-bracket
-* a `             evil-a-back-quote
+* a \`             evil-a-back-quote
 * a b             evil-a-paren
 * a o             evil-a-symbol
 * a p             evil-a-paragraph
@@ -491,7 +500,7 @@ Example:
 
 - <C-r> */+	    Paste from Register in insert model
 - "+p "*p	    Paste from Register in normal model
-- <C-r> register    paster from register in command model 
+- <C-r> register    paster from register in command model
 - "*yy or "+yy	    copy a line to your clipboard
 - "kyy		    copy line to register k
 - "*		    the contents of the system clipboard
@@ -535,7 +544,7 @@ dd ->Register "
     :source ~/mysession.vim or open vim with the -S option:
     $ vim -S ~/mysession.vim
 
-    
+
 # Sublime
 sublime.log_commands(True)
 
@@ -543,4 +552,3 @@ sublime.log_commands(True)
 
     show databases
     use [databseName]
-
